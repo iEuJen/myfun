@@ -1,5 +1,5 @@
 /*!
- * myfun.js v0.0.6
+ * myfun.js v0.0.7
  * https://gitee.com/eujen/myfun
  * 
  * Licensed fuck996 © EuZen
