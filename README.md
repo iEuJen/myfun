@@ -99,5 +99,7 @@
       - dataurl, 必填, 要轉譯的 base64 字符串
       - fileName, 必填, 轉譯完的文件名
 
-## 源碼倉庫
-- [MYFun](https://gitee.com/eujen/myfun)
+## 項目倉庫
+- [gitee](https://gitee.com/eujen/myfun)
+- [github](https://github.com/iEuJen/myfun)
+- [npm](https://www.npmjs.com/package/myfun)
