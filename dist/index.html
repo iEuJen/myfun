@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>測試</title>
+</head>
+<body>
+    测试
+    <!-- <img src="./bird.png" alt="666">
+    <img id="d5" src="" alt=""> -->
+    <!-- <input type="file" name="name" id="file"> -->
+<script type="text/javascript" src="myfun.min.js"></script></body>
+<script>
+    function ajax (args) {
+        let { data, method, url = '/' } = args
+        let xmlhttp = new XMLHttpRequest()
+        xmlhttp.open(method, url, true)
+        xmlhttp.send( data )
+    }
+</script>
+<script>
+    // myfun.compressImg({
+    //     file: 'tp',
+    //     src: './bird.png'
+    // }, (res) => {
+    //     console.log(res)
+    //     document.getElementById('d5').src = res.base64
+    // })
+</script>
+</html>
