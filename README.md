@@ -99,6 +99,54 @@
       - dataurl, 必填, 要轉譯的 base64 字符串
       - fileName, 必填, 轉譯完的文件名
 
+- I18N
+  - 類, Class
+    - 用於項目國際化多語言配置
+  - constructor (langStrings: object, lang?: string)
+    - 構造函數, 
+    - langStrings, 必填, 語言配置對象
+    - lang, 可選, 默認顯示的語言, 不填則使用 langStrings 首個屬性
+  - 例如
+    ```javascript
+      let langStrings = {
+          cn: {
+              "哇哈哈": '哇哈哈',
+              "请输入链接": '请输入链接',
+          },
+          en: {
+              "哇哈哈": 'wahaha',
+              "请输入链接": 'place input url',
+          },
+      }
+      let i18n = new I18N(langStrings)
+      console.log(i18n.lang) // cn
+      // ------
+      let i18n = new I18N(langStrings, 'en')
+      console.log(i18n.lang) // en
+    ```
+  - lang(屬性), `string`
+    - 當前使用的語言版本, 通過更改此屬性, 更換語言版本
+  - langStrings(屬性), `object`
+    - 所有版本語言要翻譯的字段對象, 即爲構造函數傳入的那個對象
+  - langs(屬性), `Array<string>`
+    - 所有語言的標記字符串, 實爲 langStrings 對象的各個屬性名, 值用於設置 lang 屬性
+  - strings(屬性), `object`
+    - 要翻譯的字段名, 這是一個鍵值對完全一致的對象, 建議使用此對象的值作爲 getText() 方法 的參數
+  - getText (key: string): string
+    - 通過此方法, 獲取當前語言對應字段的文本
+    - key, `string`, 要獲取的文本其對應的字段名
+      - 建議使用 I18N 實例屬性 strings 屬性的值, 當然也允許直接傳入有效字符串, 如果傳入的字符串不存在, 則會報錯
+      - 例
+      ```javascript
+      // 接上一個例子
+      i18n.lang = 'en'
+      i18n.getText(i18n.string.哇哈哈) // wahaha
+      // 等同於
+      i18n.getText('哇哈哈') // wahaha
+      //報錯
+      i18n.getText('哇哈哈555') // 哇哈哈555 is invalid value
+      ```
+
 ## 項目倉庫
 - [gitee](https://gitee.com/eujen/myfun)
 - [github](https://github.com/iEuJen/myfun)
